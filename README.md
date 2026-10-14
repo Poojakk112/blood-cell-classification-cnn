@@ -15,6 +15,10 @@ A deep learning project that classifies white blood cells from microscopy images
 6. **Test-time augmentation (TTA) + model ensembling** — Averaged predictions across multiple augmented views and two trained models
 7. **Grad-CAM** — Visualized model attention to confirm it focuses on the actual white blood cell, not background artifacts
 
+**Train vs. test framing difference (domain shift):**
+
+![Train vs test domain shift](images/train-vs-test-domain-shift.png)
+
 ## Results
 | Stage | Test Accuracy |
 |---|---|
@@ -29,6 +33,10 @@ A deep learning project that classifies white blood cells from microscopy images
 
 ## Grad-CAM Results
 Grad-CAM visualizations confirmed the model consistently focuses on the actual white blood cell (stained nucleus region) rather than surrounding red blood cells or background — validating that the model learned biologically meaningful features rather than spurious correlations.
+
+![Grad-CAM heatmaps for all 4 cell types](images/gradcam.png)
+
+*Top row: original test images. Bottom row: Grad-CAM heatmaps, with red showing where the model looks. In every class it focuses on the white blood cell.*
 
 ## Tech Stack
 Python, PyTorch, torchvision, Grad-CAM, scikit-learn, Google Colab (T4 GPU)
